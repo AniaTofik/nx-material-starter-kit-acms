@@ -1,6 +1,10 @@
 <mat-list role="list" class="mat-elevation-z8">
   <h1>Product list</h1>
+  <mat-chip-list aria-label="Fish selection">
+  <mat-chip *ngFor="let product of products$ | async">
+    {{product.category}}
+  </mat-chip>
   <mat-list-item role="listitem" *ngFor="let product of products$ | async">{{product.title}} {{product.price}}
     <button (click)="remove(product.id)">Delete</button>
   </mat-list-item>
-</mat-list>
+<mat-list>
